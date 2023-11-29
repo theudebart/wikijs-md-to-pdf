@@ -1,0 +1,33 @@
+{
+	"name": "wikijs-md-to-pdf",
+	"version": "1.0.0",
+	"description": "This project will convert a WikiJS, with content written in Markdown format, into a PDF document.",
+	"main": "./source/scripts/build.js",
+	"scripts": {
+		"download": "node ./source/scripts/download.js",
+		"setup": "node ./source/scripts/setup.js",
+		"build": "node ./source/scripts/build.js"
+	},
+	"author": {
+		"name": "Marcel Patzsch",
+		"url": "https://github.com/theudebart"
+	},
+	"license": "GPL-3.0-only",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/theudebart/wikijs-md-to-pdf.git"
+	},
+	"bugs": {
+		"url": "https://github.com/theudebart/wikijs-md-to-pdf/issues"
+	},
+	"type": "module",
+	"dependencies": {
+		"@clack/prompts": "^0.7.0",
+		"consola": "^3.2.3",
+		"graphql-request": "^6.1.0",
+		"iso-lang-codes": "^2.1.1",
+		"moment": "^2.29.4",
+		"save": "^2.9.0"
+	}
+}

@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "ms-vscode.vscode-typescript-next",
+        "vector-of-bool.gitflow",
+        "esbenp.prettier-vscode",
+        "tomoki1207.pdf",
+        "streetsidesoftware.code-spell-checker",
+        "yinfei.luahelper"
+    ]
+}
