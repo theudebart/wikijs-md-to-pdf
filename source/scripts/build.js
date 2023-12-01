@@ -75,7 +75,7 @@ if (settings['language'] != undefined)
 
 let date = Moment().locale(settings['language']).format('LL');
 if (settings['date-format'] != undefined)
-  date = Moment().format(settings['date-format']);
+  date = Moment().locale(settings['language']).format(settings['date-format']);
 options.push(`--metadata`, `date=${date}`);
 
 if (settings['selected-tabs'] != undefined)
