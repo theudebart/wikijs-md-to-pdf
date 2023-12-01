@@ -82,13 +82,13 @@ $endif$
 % Headings
 \usepackage{titlesec}
 % H1
-\titleformat{\chapter}[hang] % remove runin
+\titleformat{\section}[hang] % remove runin
        {\normalfont\bfseries}% formatting commands to apply to the whole heading
        {\thechapter}% the label and number
        {0.5em}% space between label/number and title
        {}% formatting commands applied just to title
        []% punctuation or other commands following title
-\titlespacing*{\chapter}{0em}{1em}{1em}
+\titlespacing*{\section}{0em}{1em}{1em}
 % H2
 \titleformat{\subsection}[hang] % remove runin
        {\normalfont\bfseries}% formatting commands to apply to the whole heading
