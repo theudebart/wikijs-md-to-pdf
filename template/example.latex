@@ -178,29 +178,29 @@ $endif$
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 
 % Blockquote
-\usepackage{mdframed}
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \definecolor{blockquote-border-default}{RGB}{120,120,120}
 \definecolor{blockquote-background-default}{RGB}{236,239,241}
 \definecolor{blockquote-text-default}{RGB}{66,66,66}
-\newenvironment{blockquote-default}{\begin{mdframed}[rightline=false,bottomline=false,topline=false,linewidth=6pt,linecolor=blockquote-border-default,backgroundcolor=blockquote-background-default,skipabove=\parskip]\color{blockquote-text-default}}{\end{mdframed}}
-\renewenvironment{quote}{\begin{blockquote-default}}{\end{blockquote-default}}
 \definecolor{blockquote-border-info}{RGB}{100,181 246}
 \definecolor{blockquote-background-info}{RGB}{227,242,253}
 \definecolor{blockquote-text-info}{RGB}{13,71,161}
-\newenvironment{blockquote-info}{\begin{mdframed}[rightline=false,bottomline=false,topline=false,linewidth=6pt,linecolor=blockquote-border-info,backgroundcolor=blockquote-background-info,skipabove=\parskip]\color{blockquote-text-info}}{\end{mdframed}}
 \definecolor{blockquote-border-success}{RGB}{129,199,132}
 \definecolor{blockquote-background-success}{RGB}{232,245,233}
 \definecolor{blockquote-text-success}{RGB}{27,94,32}
-\newenvironment{blockquote-success}{\begin{mdframed}[rightline=false,bottomline=false,topline=false,linewidth=6pt,linecolor=blockquote-border-success,backgroundcolor=blockquote-background-success,skipabove=\parskip]\color{blockquote-text-success}}{\end{mdframed}}
 \definecolor{blockquote-border-warning}{RGB}{255,183,77}
 \definecolor{blockquote-background-warning}{RGB}{255,243,224}
 \definecolor{blockquote-text-warning}{RGB}{179,63,0}
-\newenvironment{blockquote-warning}{\begin{mdframed}[rightline=false,bottomline=false,topline=false,linewidth=6pt,linecolor=blockquote-border-warning,backgroundcolor=blockquote-background-warning,skipabove=\parskip]\color{blockquote-text-warning}}{\end{mdframed}}
 \definecolor{blockquote-border-danger}{RGB}{229,115,115}
 \definecolor{blockquote-background-danger}{RGB}{255,235,238}
 \definecolor{blockquote-text-danger}{RGB}{183,28,28}
-\newenvironment{blockquote-danger}{\begin{mdframed}[rightline=false,bottomline=false,topline=false,linewidth=6pt,linecolor=blockquote-border-danger,backgroundcolor=blockquote-background-danger,skipabove=\parskip]\color{blockquote-text-danger}}{\end{mdframed}}
+\usepackage{tcolorbox}
+\newtcolorbox{blockquote}[3]{arc=0pt,sharp corners,boxrule=6pt,rightrule=0pt,bottomrule=0pt,toprule=0pt,colframe=#1,colback=#2,coltext=#3}
+\newenvironment{blockquote-default}{\begin{blockquote}{blockquote-border-default}{blockquote-background-default}{blockquote-text-default}}{\end{blockquote}}
+\newenvironment{blockquote-info}{\begin{blockquote}{blockquote-border-info}{blockquote-background-info}{blockquote-text-info}}{\end{blockquote}}
+\newenvironment{blockquote-success}{\begin{blockquote}{blockquote-border-success}{blockquote-background-success}{blockquote-text-success}}{\end{blockquote}}
+\newenvironment{blockquote-warning}{\begin{blockquote}{blockquote-border-warning}{blockquote-background-warning}{blockquote-text-warning}}{\end{blockquote}}
+\newenvironment{blockquote-danger}{\begin{blockquote}{blockquote-border-danger}{blockquote-background-danger}{blockquote-text-danger}}{\end{blockquote}}
+\renewenvironment{quote}{\begin{blockquote-default}}{\end{blockquote-default}}
 
 % Sections
 \setcounter{secnumdepth}{-\maxdimen} % Remove section numbering
