@@ -83,7 +83,7 @@ $endif$
 \usepackage{titlesec}
 % H1
 \titleformat{\section}[hang] % remove runin
-       {\normalfont\bfseries}% formatting commands to apply to the whole heading
+       {\normalfont\bfseries\Huge}% formatting commands to apply to the whole heading
        {\thechapter}% the label and number
        {0.5em}% space between label/number and title
        {}% formatting commands applied just to title
@@ -91,7 +91,7 @@ $endif$
 \titlespacing*{\section}{0em}{1em}{1em}
 % H2
 \titleformat{\subsection}[hang] % remove runin
-       {\normalfont\bfseries}% formatting commands to apply to the whole heading
+       {\normalfont\bfseries\huge}% formatting commands to apply to the whole heading
        {\thesubsection}% the label and number
        {0.5em}% space between label/number and title
        {}% formatting commands applied just to title
@@ -99,7 +99,7 @@ $endif$
 \titlespacing*{\subsection}{0em}{1em}{1em}
 % H3
 \titleformat{\subsubsection}[hang] % remove runin
-       {\normalfont\bfseries}% formatting commands to apply to the whole heading
+       {\normalfont\bfseries\Large}% formatting commands to apply to the whole heading
        {\thesubsubsection}% the label and number
        {0.5em}% space between label/number and title
        {}% formatting commands applied just to title
@@ -107,7 +107,7 @@ $endif$
 \titlespacing*{\subsubsection}{0em}{1em}{1em}
 % H4
 \titleformat{\paragraph}[hang] % remove runin
-       {\normalfont\bfseries}% formatting commands to apply to the whole heading
+       {\normalfont\bfseries\large}% formatting commands to apply to the whole heading
        {\theparagraph}% the label and number
        {0.5em}% space between label/number and title
        {}% formatting commands applied just to title
