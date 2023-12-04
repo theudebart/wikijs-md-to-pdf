@@ -177,6 +177,12 @@ $endif$
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 
+% Pagebreak
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}\hbox{}\pagestyle{header-footer-empty-page}\clearpage\pagestyle{header-footer}\fi
+}
+
 % Blockquote
 \definecolor{blockquote-border-default}{RGB}{120,120,120}
 \definecolor{blockquote-background-default}{RGB}{236,239,241}
