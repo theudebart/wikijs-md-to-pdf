@@ -61,6 +61,8 @@ function ApplyTransformations(blocks, header_demote_level, include_path, file_pa
         Link = function(link)
             if path.is_absolute(link.target) then
                 link.target = '#' .. TransformPathToIdentifier(link.target)
+            elseif path.is_relative(link.target) and link.target:sub(1, 1) == '#' then
+                link.target = '#' .. TransformPathToIdentifier(file_path .. ':' .. link.target)
             end
             return link
         end
