@@ -1,6 +1,6 @@
 {
 	"name": "wikijs-md-to-pdf",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "This project will convert a WikiJS, with content written in Markdown format, into a PDF document.",
 	"main": "./source/scripts/build.js",
 	"scripts": {
