@@ -27,6 +27,21 @@ function Header(header)
     end
 end
 
+function TransformHeaderToIdentifier(header)
+    -- Use the pandoc default header identifier
+    -- In Wikijs if the header starts with a digit, the identifier is prefixed with 'h' following the digits
+    -- This is not implemented in pandoc, so we need add this behavior
+    if pandoc.utils.stringify(header.content):sub(1, 1):match('%d+') then
+        -- Workaround to use the default pandoc header content to identifier method
+        -- as this is not available in Lua
+        local temp_header = pandoc.Header(1, 'h' .. pandoc.utils.stringify(header.content))
+        local temp_doc = pandoc.Pandoc {temp_header}
+        local roundtripped_doc = pandoc.read(pandoc.write(temp_doc, FORMAT), FORMAT)
+        header.identifier = roundtripped_doc.blocks[1].identifier
+    end
+    return header
+end
+
 function TransformPathToIdentifier(path)
     -- Remove trailing '/'
     if path:sub(-1) == '/' then
@@ -55,6 +70,7 @@ function ApplyTransformations(blocks, header_demote_level, include_path, file_pa
             if header_demote_level then
                 header.level = header.level + header_demote_level
             end
+            header = TransformHeaderToIdentifier(header) -- Used to create identifier like Wikijs
             header.identifier = TransformPathToIdentifier(file_path .. ':' .. header.identifier)
             return header
         end,
